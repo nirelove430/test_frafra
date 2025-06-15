@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 19:11:44 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/06/13 19:11:46 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/06/14 04:33:53 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	init_fract(t_fract *f)
 	f->off_x = 0;
 	f->off_y = 0;
 	f->iter_base = 60;
+	f->hue = 0;
 	render_frame(f);
 	mlx_hook(f->win, 17, 0, close_win, f);
 	mlx_key_hook(f->win, key_hook, f);

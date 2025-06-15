@@ -54,8 +54,9 @@ void		init_fract(t_fract *f);
 int			close_win(t_fract *f);
 void		render_frame(t_fract *f);
 int			get_color(double mu, int limit, int hue_deg);
-double		iter_mu(double cx, double cy, int lim);
+
 int			mouse_hook(int btn, int x, int y, t_fract *f);
 int			key_hook(int k, t_fract *f);
-
+double		iter_mandel(double cx, double cy, const t_fract *f);
+double		iter_julia(double zr, double zi, const t_fract *f);
 #endif

@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 19:11:16 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/06/13 19:57:28 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/06/14 04:57:32 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,12 @@ void	render_frame(t_fract *f)
 		x = 0;
 		while (x < WIN_W)
 		{
-			line[x] = get_color(iter_mu((x - WIN_W / 2.0) * inc + f->off_x, cy,
-						f->iter_base), f->iter_base, f->hue);
+			if (f->kind == MANDELBROT)
+				line[x] = get_color(iter_mandel((x - WIN_W / 2.0) * inc
+							+ f->off_x, cy, f), f->iter_base, f->hue);
+			else
+				line[x] = get_color(iter_julia((x - WIN_W / 2.0) * inc
+							+ f->off_x, cy, f), f->iter_base, f->hue);
 			++x;
 		}
 		put_line(&f->img, line, y);
