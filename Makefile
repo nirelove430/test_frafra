@@ -16,7 +16,7 @@ MLX_DIR     := minilibx-linux        # ← Linux 版なら minilibx-linux では
 
 ### Compiler / Flags ###########################################################
 CC      := cc
-CFLAGS  := -Wall -Wextra -Werror -O2
+CFLAGS  := -Wall -Wextra -Werror -O3
 INCS    := -I$(INC_DIR) -I$(LIBFT_DIR) -I$(PRINTF_DIR) -I$(MLX_DIR)
 
 

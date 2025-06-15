@@ -6,12 +6,11 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 19:11:44 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/06/14 04:33:53 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/06/16 07:27:49 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <stdlib.h>
 
 int	close_win(t_fract *f)
 {

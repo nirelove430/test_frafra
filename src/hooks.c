@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 19:11:52 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/06/13 19:59:52 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/06/16 07:27:02 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,20 @@ int	mouse_hook(int btn, int x, int y, t_fract *f)
 		return (0);
 	prev = f->zoom;
 	if (btn == BTN_UP)
-		f->zoom = prev * ZOOM_STEP;
+		f->zoom *= ZOOM_STEP;
 	else
-		f->zoom = prev / ZOOM_STEP;
-	f->off_x += (x - WIN_W / 2.0) * (4.0 / WIN_W) * (1 / prev - 1 / f->zoom);
-	f->off_y += (y - WIN_H / 2.0) * (4.0 / WIN_W) * (1 / prev - 1 / f->zoom);
+		f->zoom /= ZOOM_STEP;
+	if (f->zoom < 1e-14)
+		f->zoom = 1e-14;
+	f->off_x += (x - WIN_W / 2.0) * (4.0 / WIN_W) * (1.0 / prev - 1.0
+			/ f->zoom);
+	f->off_y += (y - WIN_H / 2.0) * (4.0 / WIN_W) * (1.0 / prev - 1.0
+			/ f->zoom);
 	f->iter_base = 40 + 8 * log2(f->zoom);
-	if (f->iter_base > 250)
-		f->iter_base = 250;
+	if (f->iter_base < 40)
+		f->iter_base = 40;
+	if (f->iter_base > 200)
+		f->iter_base = 200;
 	render_frame(f);
 	return (0);
 }

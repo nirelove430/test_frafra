@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/16 07:34:14 by kyanagis          #+#    #+#             */
+/*   Updated: 2025/06/16 07:34:15 by kyanagis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
+# include "ft_printf.h"
+# include "libft.h"
 # include <math.h>
 # include <mlx.h>
 # include <stdint.h>
-
 # define WIN_W 800
 # define WIN_H 600
 
@@ -23,8 +35,18 @@
 typedef enum e_kind
 {
 	MANDELBROT,
-	JULIA
+	JULIA,
+	BURNING_SHIP,
+	SIERPINSKI
 }			t_kind;
+
+typedef struct s_iter
+{
+	double	zr;
+	double	zi;
+	double	dr;
+	double	di;
+}			t_iter;
 
 typedef struct s_img
 {
@@ -44,19 +66,31 @@ typedef struct s_fract
 	double	zoom;
 	double	off_x;
 	double	off_y;
-	double c_re; /* Julia 用 C 定数 */
+	double	c_re;
 	double	c_im;
 	int		iter_base;
 	int		hue;
 }			t_fract;
+
+typedef struct s_render_vars
+{
+	int		x;
+	int		y;
+	double	cx;
+	double	cy;
+	double	inc;
+}			t_render_vars;
 
 void		init_fract(t_fract *f);
 int			close_win(t_fract *f);
 void		render_frame(t_fract *f);
 int			get_color(double mu, int limit, int hue_deg);
 
+int			iter_burning(double cx, double cy, const t_fract *f);
+int			sierpinski(int cx, int cy);
 int			mouse_hook(int btn, int x, int y, t_fract *f);
 int			key_hook(int k, t_fract *f);
 double		iter_mandel(double cx, double cy, const t_fract *f);
 double		iter_julia(double zr, double zi, const t_fract *f);
+
 #endif

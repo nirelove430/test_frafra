@@ -6,13 +6,12 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 17:52:29 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/06/14 00:38:56 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/06/16 07:27:56 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "color_theme.h"
 #include "fractol.h"
-#include <math.h>
 
 static int	compose_rgb(double t, double brt, double sat, double phase)
 {

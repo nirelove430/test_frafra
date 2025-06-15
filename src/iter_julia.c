@@ -6,12 +6,11 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 04:38:51 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/06/14 04:53:33 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/06/16 07:27:46 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <math.h>
 
 static double	distance_est(double zr, double zi, double dr, double di)
 {
