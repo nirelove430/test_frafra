@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 19:11:52 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/06/16 07:27:02 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/06/16 21:47:45 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int	mouse_hook(int btn, int x, int y, t_fract *f)
 	f->iter_base = 40 + 8 * log2(f->zoom);
 	if (f->iter_base < 40)
 		f->iter_base = 40;
-	if (f->iter_base > 200)
-		f->iter_base = 200;
+	if (f->iter_base > 250)
+		f->iter_base = 250;
 	render_frame(f);
 	return (0);
 }

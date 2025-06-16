@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 07:34:14 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/06/16 07:34:15 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/06/17 00:25:48 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <math.h>
 # include <mlx.h>
 # include <stdint.h>
+
 # define WIN_W 800
 # define WIN_H 600
 
