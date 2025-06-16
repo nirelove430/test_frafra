@@ -6,7 +6,7 @@
 /*   By: kyanagis <kyanagis@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 17:52:29 by kyanagis          #+#    #+#             */
-/*   Updated: 2025/06/16 22:33:27 by kyanagis         ###   ########.fr       */
+/*   Updated: 2025/06/17 07:35:55 by kyanagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,6 @@ static int	compose_rgb(double prog, double brt, double sat, double phase)
 	return ((red << 16) | (green << 8) | blue);
 }
 
-// static double	calc_satmix(double mu, double tex)
-// {
-// 	double	stripe;
-// 	double	sat;
-
-// 	stripe = fabs(sin(M_PI * mu / STRIPE_P));
-// 	sat = SAT_BASE + SAT_GAIN * stripe;
-// 	sat *= 0.9 + TEX_SAT_GAIN * tex;
-// 	return (sat);
-// }
 int	get_color(double mu, int limit, int hue_deg)
 {
 	double	prog;
