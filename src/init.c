@@ -12,7 +12,6 @@
 
 #include "fractol.h"
 
-/* clean_exit.c ----------------------------------------------------------- */
 #include "fractol.h"
 
 static void	destroy_mlx(t_fract *f)
@@ -21,11 +20,13 @@ static void	destroy_mlx(t_fract *f)
 		mlx_destroy_image(f->mlx, f->img.img);
 	if (f->win)
 		mlx_destroy_window(f->mlx, f->win);
+#ifdef __linux__
 	if (f->mlx)
 	{
 		mlx_destroy_display(f->mlx);
 		free(f->mlx);
 	}
+#endif
 }
 
 int	close_win(t_fract *f)
